@@ -3,7 +3,20 @@
 <p align="center">
   <img width="80%" height="200" src="assets/header.png">
 </p>
+RootMe is a beginner-level room that can teach how to gather information, scan ports and directories and escalate privileges using various tools. This is my first writeup and certainly hope that it will be a motivation for me to keep on creating writeups for other rooms. 
 <br><br>
+Link to the room: <a href ='https://tryhackme.com/room/rrootme'>https://tryhackme.com/room/rrootme</a>
+<br><br>
+<br>
+
+<p align="center">
+  <b>Without further ado, Let's Root</b>
+</p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/MM0Jrc8BHKx3y/giphy.gif" alt="animated" height = 300>
+</p>
+<br>
 
 ### Task 1: Deploy the machine
 
@@ -142,7 +155,13 @@ usr/bin/python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
   <img width="70%" height="200" src="assets/rootme12.PNG">
 </p>
 <br>
-FINALLY, WE GET TO THE ROOT!!!
+
+<p align="center">
+  <b>FINALLY, WE GET TO THE ROOT!!!</b>
+</p>
+<p align="center">
+  <img src="https://media.giphy.com/media/opDRL3H2A9iLNuvbOv/giphy.gif" alt="animated" height = 350/>
+</p>
 
 Now you can find root.txt using ```find``` command:
 
