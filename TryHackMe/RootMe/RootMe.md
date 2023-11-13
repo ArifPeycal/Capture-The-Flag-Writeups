@@ -1,3 +1,5 @@
-#RootMe
+# RootMe
 
-![Header](TryHackMe/assets/header.jpg)
+<img src="assets/header.png" width="100%" height="200px" style="text-align:center;">
+
+
