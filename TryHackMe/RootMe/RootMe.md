@@ -54,5 +54,5 @@ We'll check the /panel directory first.
   <img width="80%" height="400" src="assets/rootme4.PNG">
 </p>
 
-The /panel directory requires us to upload a file. The question has given us some hints about where we need to upload PHP reverse shell to the web. 
+The /panel directory requires us to upload a file. The question has given us some hints about where we need to upload PHP reverse shell to the web. You can download the PHP reverse shell from the <a href="https://github.com/pentestmonkey/php-reverse-shell" target="_blank">PentestMonkey</a> Github repository.
 
