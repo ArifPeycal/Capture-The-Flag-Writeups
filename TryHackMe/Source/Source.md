@@ -94,4 +94,31 @@ Execute the payload using ```run``` or ```exploit``` command.
   <img width="80%" height="200" src="assets/source7.PNG">
 </p>
 
+As you can see, we get the root access. We can use python to create a stable shell.
+
+```
+shell
+```
+```
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+<p align="center">
+  <img width="80%" height="200" src="assets/source8.PNG">
+</p>
+
+Usually user.txt will be in the home directory. So, I'm using find command to search the first flag 🚩.
+
+```
+find -name user.txt
+```
+🚩 user.txt
+THM{***********************}
+
+Now, change to root directory to find second flag 🚩.
+```
+find -name root.txt
+```
+🚩 root.txt
+THM{*******************}
+
 
