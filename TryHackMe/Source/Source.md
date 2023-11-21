@@ -3,11 +3,9 @@
 <p align="center">
   <img width="80%" height="150" src="assets/header.PNG">
 </p>
-Source is a beginner-level room that can teach how to gather information, scan ports and directories and escalate privileges using various tools. This is my first writeup and certainly hope that it will be a motivation for me to keep on creating writeups for other rooms. 
-<br><br>
+<br>
 Link to the room: <a href ='https://tryhackme.com/room/source'>https://tryhackme.com/room/source</a>
 <br><br>
-<br>
 
 ### Task 1: Scanning and Enumeration 
 
@@ -24,18 +22,14 @@ nmap -T4 -sV {ip_address}
 </p>
 <br>
 
-Informations from Nmap scan: 
+<b>Informations from Nmap scan:</b> 
 * 2 open ports (port 22 and 10000)
 * Port 22 is running SSH (OpenSSH 7.6p1)
 * Port 10000 is running MiniServ 1.890 (Webmin httpd)
 
-According to the room description, Webmin is a web-based system configuration tool.
 <br>
+According to the room description, Webmin is a web-based system configuration tool. It can be used to  manage all aspects of your Linux dedicated server from a graphical interface instead of the command line interface (CLI),
 <br>
-
-<p align="center">
-  <img width="80%" height="200" src="assets/source14.PNG">
-</p>
 <br>
 
 ### Task 2: Exploitation 
@@ -46,6 +40,7 @@ When we try to access the web server using Firefox, it will give an error. Seems
 <p align="center">
   <img width="80%" height="350" src="assets/source13.PNG">
 </p>
+<br>
 
 A login page?🤔My first thought is to bruteforce the login credentials but that will take some time. Maybe we can search for the web server's vulnerabilities that we can exploit.
 <br>
@@ -132,5 +127,11 @@ find -name root.txt
 🚩 root.txt
 <br>
 THM{*******************}
-
-
+<br>
+<br>
+<p align="center">
+  <b>Congrats on finding all flags👏</b>
+</p>
+<p align="center">
+  <img src="https://media.tenor.com/A7vPsKccr7sAAAAC/konata-good-job.gif" alt="animated" height = 300>
+</p>
